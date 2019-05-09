@@ -5,34 +5,36 @@ import java.util.*;
 public class Brain_calc {
 
 	public static void main(String[] args) {
-		int f_ip, s_ip;
-		ArrayList<Integer> f_op = new ArrayList<Integer>();
-		ArrayList<Integer> s_op = new ArrayList<Integer>();
-		ArrayList<Integer> op_Array = new ArrayList<Integer>();
+		long f_ip, s_ip;
+		ArrayList<Long> f_op = new ArrayList<Long>();
+		ArrayList<Long> s_op = new ArrayList<Long>();
+		ArrayList<Long> op_Array = new ArrayList<Long>();
 		System.out.println("Enter First input : ");
 		Scanner first_ip = new Scanner(System.in);
-		f_ip = first_ip.nextInt();
+		f_ip = first_ip.nextLong();
 		System.out.println("Enter Second input : ");
 		Scanner second_ip = new Scanner(System.in);
-		s_ip = second_ip.nextInt();
+		s_ip = second_ip.nextLong();
 		
-		for (int i = 2; i < f_ip; i++) {
+		for (long i = 2; i < f_ip; i++) {
 			if (f_ip % i == 0) {
 				f_op.add(i);
+				System.out.println(i);
 			}
 		}
 
-		Integer op1[] = new Integer[f_op.size()];
+		Long op1[] = new Long[f_op.size()];
 		op1 = f_op.toArray(op1);
 		
 		
-		for (int j = 2; j < s_ip; j++) {
+		for (long j = 2; j < s_ip; j++) {
 			if (s_ip % j == 0) {
 				s_op.add(j);
+				System.out.println(j);
 			}
 		}
 		
-		Integer op2[] = new Integer[s_op.size()];
+		Long op2[] = new Long[s_op.size()];
 		op2 = s_op.toArray(op2);
 		
 		System.out.println("Multiples of first input : " + f_op);
@@ -46,6 +48,6 @@ public class Brain_calc {
 		}
 		System.out.println("Multiples of second input : " + s_op);
 		System.out.println("__________________________________________\n");
-		System.out.println("Intersecion : " + op_Array);
+		System.out.println("Intersection : " + op_Array);
 	}
 }
